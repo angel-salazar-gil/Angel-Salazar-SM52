@@ -17,7 +17,10 @@
         
         <div class="form-group">
             <label for="">Avatar</label>
-            <input type="file" name="avatar" class="form-control-file" accept=".png, .jpg,.jpeg">
+            <div class="custom-file">
+                <input type="file" name="avatar" class="custom-file-input" accept=".png, .jpg,.jpeg" aria-describedby="inputGroupFileAddon04">
+                <label class="custom-file-label" for="inputGroupFile04">Seleccionar archivo</label>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>
