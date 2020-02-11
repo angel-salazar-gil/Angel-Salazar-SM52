@@ -3,28 +3,33 @@
 @section('title', 'Trainers Create')
 
 @section('content')
-    <form class="form-group" method="POST" action="/trainers/{{$trainer->slug}}" enctype="multipart/form-data">
-        @method('PUT')
-        @csrf
+
+    {!! Form::model($trainer, ['route' => ['trainers.update', $trainer], 'method' =>'PUT', 'files' => true]) !!}
         <img style="height: 100px; width: 100px; background-color: #EFEFEF; margin-top: 20px;" class="card-img-top <!--rounded-circle mx-auto d-block" src="/images/{{$trainer->avatar}}" alt="Trainer">
+
         <div class="form-group">
-            <label for="">Nombre</label>
-            <input type="text" name="name" value="{{$trainer->name}}" class="form-control" autocomplete="off" autofocus required>
+            {!! Form::label('name', 'Nombre') !!}
+            {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Descripcion</label>
-            <textarea class="form-control" name="descripcion" placeholder="{{$trainer->descripcion}}" rows="3" required></textarea>
+            {!! Form::label('slug', 'Slug') !!}
+            {!! Form::text('slug', null, ['class' => 'form-control']) !!}
         </div>
-        
+
         <div class="form-group">
-            <label for="">Avatar</label>
+            {!! Form::label('avatar', 'Avatar') !!}
             <div class="custom-file">
-                <input type="file" name="avatar" class="custom-file-input" accept=".png, .jpg,.jpeg">
-                <label class="custom-file-label">Seleccionar nuevo archivo</label>
+                {!! Form::file('avatar', ['class' => 'custom-file-input', 'accept' => '.png, .jpg, .jpeg']) !!}
+                {!! Form::label('inputGroupFile04', 'Seleccionar archivo', ['class' => 'custom-file-label']) !!}
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Actualizar</button>
-    </form>
+        <div class="form-group">
+            {!! Form::label('descripcion', 'Descripción') !!}
+            {!! Form::textarea('descripcion', null, ['rows' => 3, 'class' => 'form-control']) !!}
+        </div>
+        
+        {!! Form::submit('Actulizar', ['class' => 'btn btn-primary'])!!}
+    {!! Form::close() !!}
 @endsection

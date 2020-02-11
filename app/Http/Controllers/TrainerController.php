@@ -48,6 +48,7 @@ class TrainerController extends Controller
         $trainer = new Trainer();
         $trainer->name = $request->input('name'); //Que atributo se almacena en que campo
         $trainer->avatar = $name;
+        $trainer->slug = $request->input('slug');
         $trainer->descripcion = $request->input('descripcion');
         $trainer->save(); //Para almacenar los recursos en la BD
 

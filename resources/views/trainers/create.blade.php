@@ -3,26 +3,31 @@
 @section('title', 'Trainers Create')
 
 @section('content')
-    <form class="form-group" method="POST" action="/trainers" enctype="multipart/form-data">
-        @csrf
+
+    {!! Form::open(['route' => 'trainers.store', 'method' => 'POST', 'files' => true]) !!}
         <div class="form-group">
-            <label for="">Nombre</label>
-            <input type="text" name="name" class="form-control">
+            {!! Form::label('name', 'Nombre') !!}
+            {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Descripcion</label>
-            <textarea class="form-control" name="descripcion" rows="3"></textarea>
+            {!! Form::label('slug', 'Slug') !!}
+            {!! Form::text('slug', null, ['class' => 'form-control']) !!}
         </div>
-        
+
         <div class="form-group">
-            <label for="">Avatar</label>
+            {!! Form::label('avatar', 'Avatar') !!}
             <div class="custom-file">
-                <input type="file" name="avatar" class="custom-file-input" accept=".png, .jpg,.jpeg" aria-describedby="inputGroupFileAddon04">
-                <label class="custom-file-label" for="inputGroupFile04">Seleccionar archivo</label>
+                {!! Form::file('avatar', ['class' => 'custom-file-input', 'accept' => '.png, .jpg, .jpeg']) !!}
+                {!! Form::label('inputGroupFile04', 'Seleccionar archivo', ['class' => 'custom-file-label']) !!}
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>
+        <div class="form-group">
+            {!! Form::label('descripcion', 'Descripción') !!}
+            {!! Form::textarea('descripcion', null, ['rows' => 3, 'class' => 'form-control']) !!}
+        </div>
+
+        {!! Form::submit('Guardar', ['class' => 'btn btn-primary'])!!}
+    {!! Form::close() !!}
 @endsection
