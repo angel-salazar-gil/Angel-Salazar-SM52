@@ -11,5 +11,8 @@
             Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec tristique et ligula at laoreet. Praesent pellentesque, nisi vel egestas molestie, diam lectus ornare felis, sit amet mollis odio nulla quis sem. Donec euismod neque tempor condimentum consectetur. 
         </p>
         <a href="/trainers/{{$trainer->slug}}/edit" class="btn btn-primary">Editar</a>
+        {!! Form::open([ 'route' => ['trainers.destroy', $trainer->slug], 'method' => 'DELETE']) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+        {!! Form::close() !!}
     </div>
 @endsection
