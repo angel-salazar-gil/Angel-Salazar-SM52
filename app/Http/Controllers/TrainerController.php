@@ -108,8 +108,7 @@ class TrainerController extends Controller
         }
         $trainer->save(); //Almacenamos la informacion
 
-        return redirect()->route('trainers.show', [$trainer]);
-        //return 'Informacion actualizada';
+        return redirect()->route('trainers.show', [$trainer])->with('status', 'Entrenador Actualizado');
     }
 
     /**
