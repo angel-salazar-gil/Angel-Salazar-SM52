@@ -58,7 +58,8 @@ class TrainerController extends Controller
         $trainer->descripcion = $request->input('descripcion');
         $trainer->save(); //Para almacenar los recursos en la BD
 
-        return 'Saved';
+        return  redirect()->route('trainers.index');
+        //return 'Saved';
 
         //return $request->input('name'); // Espesifica que estributo de lo que se esta enviando se quiere ver
         //return $request->all(); Para poder ver que es lo que se envia
@@ -107,7 +108,8 @@ class TrainerController extends Controller
         }
         $trainer->save(); //Almacenamos la informacion
 
-        return 'Informacion actualizada';
+        return redirect()->route('trainers.show', [$trainer]);
+        //return 'Informacion actualizada';
     }
 
     /**
@@ -121,6 +123,7 @@ class TrainerController extends Controller
         $file_path = public_path().'/images/'.$trainer->avatar; //Buscamos la ubicacion del archivo del avatar
         \File::delete($file_path); // ¿Eliminamos la imagen
         $trainer->delete();
-        return 'deleted';
+
+        return  redirect()->route('trainers.index');
     }
 }

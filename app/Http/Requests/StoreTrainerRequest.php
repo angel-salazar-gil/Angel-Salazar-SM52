@@ -28,7 +28,7 @@ class StoreTrainerRequest extends FormRequest
              * Definimos lo que queremos que valide del formulario
              * Las validaciones se separan mediante el simbolo " | "
              */
-            'name' => 'required|max: 10',
+            'name' => 'required|max: 15',
             'avatar' => 'required|image',
             'slug' => 'required'
         ];
