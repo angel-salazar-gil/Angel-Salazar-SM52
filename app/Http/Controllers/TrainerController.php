@@ -39,6 +39,16 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
+        /**
+         * $validateData Variable para la validacion de datos del formulario
+         * Las validaciones se separan mediante el simbolo " | "
+         */
+        $validateData = $request->validate([
+            'name' => 'required|max: 10',
+            'avatar' => 'required|image',
+            'slug' => 'required'
+        ]);
+
         if($request->hasFile('avatar')){
             $file = $request->file('avatar'); //Guardamos la imagen en una variable
             $name = time().$file->getClientOriginalName(); //Le asignamos un nombre a la imagen junto a la fecha
