@@ -10,6 +10,6 @@ class Role extends Model
      * Este metodo nos retorna la relacion que va a tener el usuario
      */
     public function users(){
-        return $this->bolongsToMany('App\User');
+        return $this->bolongsToMany('LaraDex\User');
     }
 }

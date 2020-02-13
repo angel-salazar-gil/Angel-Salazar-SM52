@@ -14,7 +14,7 @@ class User extends Authenticatable
      * Retorna el rol que tendrá el usuario
      */
     public function roles(){
-        return $this->belongsToMany('App\Role');
+        return $this->belongsToMany('LaraDex\Role');
     }
 
     /**
