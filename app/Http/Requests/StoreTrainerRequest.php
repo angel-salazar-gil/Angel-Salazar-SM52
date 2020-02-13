@@ -30,7 +30,8 @@ class StoreTrainerRequest extends FormRequest
              */
             'name' => 'required|max: 15',
             'avatar' => 'required|image',
-            'slug' => 'required'
+            'slug' => 'required',
+            'descripcion' => 'required'
         ];
     }
 }

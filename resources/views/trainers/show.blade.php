@@ -3,16 +3,8 @@
 @section('title', 'Trainer')
 
 @section('content')
-    @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-        <!-- Button trigger modal -->
-       
+    @include('common.success')
 
-        <!-- Modal -->
-        
-    @endif
     <img style="height: 200px; width: 200px; background-color: #EFEFEF; margin: 20px;" class="card-img-top rounded-circle mx-auto d-block" src="/images/{{$trainer->avatar}}" alt="Trainer">
     <div class="text-center">
         <h5 class="card-title">{{$trainer->name}}</h5>
