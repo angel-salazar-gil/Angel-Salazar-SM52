@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSlugToTrainers extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddSlugToTrainers extends Migration
      */
     public function up()
     {
-        Schema::table('trainers', function (Blueprint $table) {
-            $table->string('slug')/*->unique()*/; //Al descomentar esta seccion me marca un error al intentar hacer las migraciones a la BD
+        Schema::create('roles', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('descripcion');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddSlugToTrainers extends Migration
      */
     public function down()
     {
-        Schema::table('trainers', function (Blueprint $table) {
-            $table->dropColumn('slug');
-        });
+        Schema::dropIfExists('roles');
     }
 }

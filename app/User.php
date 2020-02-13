@@ -10,6 +10,14 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * Este metodo debuelve la relacion o el resultado de la relacion
+     * Retorna el rol que tendrá el usuario
+     */
+    public function roles(){
+        return $this->belongsToMany('App\Role');
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
