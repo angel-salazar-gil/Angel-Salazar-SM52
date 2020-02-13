@@ -21,7 +21,7 @@ class User extends Authenticatable
      * Resive los roles de los usuarios y valida ...
      * De no ser que tenga un rol en el sistema se devuelve un error "401"
      */
-    public function authorizeRoles(){
+    public function authorizeRoles($roles){
         if ($this->hasAnyRole($roles)) {
             return true;
         }
