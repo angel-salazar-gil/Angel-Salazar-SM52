@@ -9,7 +9,14 @@ class PokemonController extends Controller
     /**
      * Retorna la vista en donde mostramos a los Pokémon's
      */
-    public function index(){
+    public function index(Request $request){
+        if ($request->ajax()) {
+            return response()->json([
+                ['id' => 1, 'name' => 'Pokemon', 'description' => 'This is a Pokemon'],
+                ['id' => 2, 'name' => 'Pokemon', 'description' => 'This is a Pokemon'],
+                ['id' => 3, 'name' => 'Pokemon', 'description' => 'This is a Pokemon'],
+            ]);
+        }
         return view('pokemons.index');
     }
 }

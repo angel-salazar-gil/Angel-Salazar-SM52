@@ -17,15 +17,11 @@
     export default {
         data(){
             return {
-                pokemons: [
-                    {id:1, name:"Pikachu", description:"Pokemon Electrico"},
-                    {id:2, name:"Squirtle", description:"Pokemon Acuatico"},
-                    {id:3, name:"Charizard", description:"Pokemon de Fuego"}
-                ]
+                pokemons: []
             }
         },
         mounted() {
-            console.log('Component mounted.')
+            axios.get('http://localhost:8000/pokemons').then(response => (this.pokemons = response.data))
         }
     }
 </script>
