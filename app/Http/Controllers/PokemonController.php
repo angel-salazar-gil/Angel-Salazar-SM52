@@ -15,8 +15,21 @@ class PokemonController extends Controller
                 ['id' => 1, 'name' => 'Pokemon', 'description' => 'This is a Pokemon'],
                 ['id' => 2, 'name' => 'Pokemon', 'description' => 'This is a Pokemon'],
                 ['id' => 3, 'name' => 'Pokemon', 'description' => 'This is a Pokemon'],
-            ]);
+            ], 200);
         }
         return view('pokemons.index');
+    }
+
+    public function store(Request $request){
+        if ($request->ajax()) {
+            $pokemon = new Pokemon();
+            $pokemon->name = $request->input('name');
+            $pokemon->picture = $request->input('picture');
+            $pokemon->save();
+
+            return response()->json([
+                "message" => "Pokemon credo correctamente"
+            ], 200);
+        }
     }
 }
