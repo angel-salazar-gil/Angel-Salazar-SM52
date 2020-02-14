@@ -20,6 +20,9 @@ class PokemonController extends Controller
         return view('pokemons.index');
     }
 
+    /**
+     * Almacenamos los datos de los pokemons que recibimos
+     */
     public function store(Request $request){
         if ($request->ajax()) {
             $pokemon = new Pokemon();
