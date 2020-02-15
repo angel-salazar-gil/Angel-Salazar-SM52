@@ -1,6 +1,6 @@
 <template>
-    <div class="modal fade" id="addPokemon" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="addPokemon" data-backdrop="static" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Agregar Pokemon</h5>
@@ -19,9 +19,14 @@
                             <input type="text" class="form-control" placeholder="Ingresa la url de una imagen" v-model="picture">
                         </div>
                         <div class="form-group">
-                            <label>Descripcion</label>
-                            <input type="text" class="form-control" placeholder="Ingresa la descripcion del pokemon" v-model="description">
+                            <label>Descripción</label>
+                            <textarea class="form-control" rows="3" placeholder="Ingresa la descripcion del Pokemon" v-model="description"></textarea>
                         </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <form @submit.prevent="savePokemon">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
