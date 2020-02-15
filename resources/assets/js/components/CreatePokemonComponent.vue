@@ -22,7 +22,7 @@
                             <label>Descripcion</label>
                             <input type="text" class="form-control" placeholder="Ingresa la descripcion del pokemon" v-model="description">
                         </div>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
             </div>
