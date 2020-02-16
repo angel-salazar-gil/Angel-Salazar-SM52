@@ -17,4 +17,12 @@ class Trainer extends Model
     {
         return 'slug';
     }
+
+    /**
+     * Espesificamos la relacion de los entrenadores a los Pokemons
+     */
+    public function pokemons()
+    {
+        return $this->hasMany('LaraDex\Pokemon');
+    }
 }
