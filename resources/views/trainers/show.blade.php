@@ -18,5 +18,7 @@
                 {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
         </div>
+        <modal-button class="btn btn-success"></modal-button>
+        <create-form-pokemon class="text-left"></create-form-pokemon>
     </div>
 @endsection

@@ -49604,7 +49604,7 @@ var render = function() {
   return _c(
     "button",
     {
-      staticClass: "btn btn-primary top-space",
+      staticClass: "btn btn-primary",
       attrs: {
         type: "button",
         "data-toggle": "modal",
@@ -49776,7 +49776,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         savePokemon: function savePokemon() {
-            axios.post('http://localhost:8000/pokemons', {
+            var currentRute = window.location.pathname;
+
+            axios.post('http://localhost:8000' + currentRute + '/pokemons', {
                 name: this.name,
                 picture: this.picture,
                 description: this.description

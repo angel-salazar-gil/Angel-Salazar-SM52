@@ -22,7 +22,8 @@ Route::get('/', function () {
 Route::get('prueba/{param}', 'PruebaController@prueba');
 
 Route::resource('trainers', 'TrainerController');
-Route::resource('pokemons', 'PokemonController');
+//Route::resource('pokemons', 'PokemonController');
+Route::post('trainers/{trainer}/pokemons', 'PokemonController@store');
 
 /*
 | Se pueden meter Informacion pro medio de este tipo de rutas, y abilitarlos para que acepten valores nulos

@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="btn btn-primary top-space" data-toggle="modal" data-target="#addPokemon">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPokemon">
 	    Agregar
 	</button>
 </template>
