@@ -10,10 +10,10 @@ class PokemonController extends Controller
     /**
      * Retorna la vista en donde mostramos a los Pokémon's
      */
-    public function index(Request $request){
+    public function index(Trainer $trainer, Request $request){
         if ($request->ajax()) {
-            $pokemons = Pokemon::all();
-            return response()->json($pokemons, 200);
+            //$pokemons = $trainer->pokemons;
+            return response()->json($trainer->pokemons, 200);
         }
         return view('pokemons.index');
     }

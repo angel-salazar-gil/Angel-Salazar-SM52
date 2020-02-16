@@ -50302,7 +50302,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this2 = this;
 
-        axios.get('http://localhost:8000/pokemons').then(function (res) {
+        var currentRute = window.location.pathname;
+
+        axios.get('http://localhost:8000' + currentRute + '/pokemons').then(function (res) {
+            console.log(res);
             _this2.pokemons = res.data;
             _this2.loading = false;
         });

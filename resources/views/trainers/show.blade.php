@@ -20,5 +20,6 @@
         </div>
         <modal-button class="btn btn-success"></modal-button>
         <create-form-pokemon class="text-left"></create-form-pokemon>
+        <list-of-pokemons></list-of-pokemons>
     </div>
 @endsection

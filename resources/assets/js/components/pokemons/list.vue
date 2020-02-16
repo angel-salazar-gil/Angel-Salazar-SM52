@@ -29,11 +29,15 @@ import EventBus from '../../event-bus';
             })
         },
         mounted() {
-            axios.get('http://localhost:8000/pokemons')
-                 .then((res) => {
-                        this.pokemons = res.data
-                        this.loading = false
-                    })
+            let currentRute = window.location.pathname
+            
+            axios
+                .get(`http://localhost:8000${currentRute}/pokemons`)
+                .then((res) => {
+                       console.log(res)
+                       this.pokemons = res.data
+                       this.loading = false
+                   })
         }
     }
 </script>
