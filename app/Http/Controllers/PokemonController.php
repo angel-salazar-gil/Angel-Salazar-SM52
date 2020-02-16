@@ -26,7 +26,8 @@ class PokemonController extends Controller
             $pokemon->save();
 
             return response()->json([
-                "message" => "Pokemon credo correctamente"
+                "message" => "Pokemon credo correctamente",
+                "pokemon" => $pokemon
             ], 200);
         }
     }
